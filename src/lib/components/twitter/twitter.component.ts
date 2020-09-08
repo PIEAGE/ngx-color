@@ -6,10 +6,7 @@ import { ColorWrap, EditableInputModule, SwatchModule, isValidHex } from 'ngx-co
 @Component({
   selector: 'color-twitter',
   template: `
-  <div class="twitter-picker {{ triangle }}-triangle {{ className }}" [style.width.px]="width">
-    <div class="triangleShadow"></div>
-    <div class="triangle"></div>
-    <div class="twitter-body">
+
       <div class="twitter-swatch" *ngFor="let color of colors">
         <color-swatch
           [color]="color"
@@ -19,18 +16,6 @@ import { ColorWrap, EditableInputModule, SwatchModule, isValidHex } from 'ngx-co
           (onHover)="onSwatchHover.emit($event)"
         ></color-swatch>
       </div>
-      <div class="twitter-hash">
-        <div>#</div>
-      </div>
-      <div class="twitter-input">
-        <color-editable-input
-          [style]="{ input: input }"
-          [value]="hex.replace('#', '')"
-          (onChange)="handleValueChange($event)"
-        ></color-editable-input>
-      </div>
-    </div>
-  </div>
   `,
   styles: [
     `
